@@ -19,6 +19,6 @@ public class Tile extends JPanel {
     }
 
     public int getFieldSize(){
-        return 50;
+        return 40;
     }
 }

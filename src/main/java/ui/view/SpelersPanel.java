@@ -37,7 +37,7 @@ public class SpelersPanel extends JPanel {
 
     public void createComputerVeld() {
         if(veld == null){
-            addNameLabel("Computer: ");
+            addNameLabel("Computer");
             veld = new ComputerVeld();
             veld.setVeld();
         }

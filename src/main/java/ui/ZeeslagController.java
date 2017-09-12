@@ -14,7 +14,12 @@ public class ZeeslagController {
         view.setSpelersNaam(speler.getNaam());
     }
     public void maakSpeler(){
-        speler = new Speler(JOptionPane.showInputDialog(null,"Wat is uw naam?"));
+        try{
+            speler = new Speler(JOptionPane.showInputDialog(null,"Wat is uw naam?"));
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null,e.getMessage());
+            maakSpeler();
+        }
     }
     public void startGame() {
         view.setVisible(true);
