@@ -25,7 +25,7 @@ public class SpelersPanel extends JPanel {
 
     public void createSpelersVeld() {
         if(veld == null){
-            addNameLabel(JOptionPane.showInputDialog(null,"Wat is uw naam?"));
+            addNameLabel("");
             veld = new SpelersVeld();
             veld.setVeld();
         }
@@ -54,5 +54,10 @@ public class SpelersPanel extends JPanel {
         c.gridwidth = 10;
         c.gridx = 2;
         add(veld,c);
+    }
+
+    public void setSpelersNaam(String naam) {
+        label.setText(naam + ": ");
+        this.updateUI();
     }
 }

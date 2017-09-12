@@ -30,4 +30,8 @@ public class ZeeslagView extends JFrame {
         setLayout(layout);
         setResizable(false);
     }
+
+    public void setSpelersNaam(String spelersNaam) {
+       spelersPanel.setSpelersNaam(spelersNaam);
+    }
 }
