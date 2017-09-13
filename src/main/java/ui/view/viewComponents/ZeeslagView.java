@@ -1,7 +1,6 @@
 package ui.view.viewComponents;
 
 import domain.model.DomainException;
-import ui.view.View;
 import ui.Controller.ZeeslagController;
 
 import javax.swing.*;
@@ -9,7 +8,7 @@ import java.awt.*;
 
 import static com.sun.tools.internal.xjc.reader.Ring.add;
 
-public class ZeeslagView extends JFrame implements View {
+public class ZeeslagView extends JFrame {
 
     private SpelersPanel spelersPanel, computerPanel;
     private InstellingenPanel instellingenPanel;

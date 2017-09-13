@@ -1,28 +1,33 @@
 package domain.model.Schip;
 
+import com.sun.java.browser.plugin2.DOM;
 import domain.model.DomainException;
 
 public enum Schip {
 
-    Vliegdekschip(5) ,Slagschip(4), Onderzeeër(3), Torpedobootjager(3), Patrouilleschip(2);
+    Vliegdekschip(new Vector(5)) ,
+    Slagschip(new Vector(4)),
+    Onderzeeër(new Vector(3)),
+    Torpedobootjager(new Vector(3)),
+    Patrouilleschip(new Vector(2));
 
-    private final int groote;
+    private Vector vector;
     private Compartiment[] compartiments;
-    Schip(int groote){
-        this.groote = groote;
+    Schip(Vector v){
+        setVector(v);
         setCompartiment();
 
     }
 
     private void setCompartiment() {
-        compartiments = new Compartiment[groote];
+        compartiments = new Compartiment[this.vector.getGroote()];
         for(int i = 0; i<compartiments.length;i++){
             compartiments[i] = new Compartiment();
         }
     }
 
     public int getGroote(){
-        return groote;
+        return vector.getGroote();
     }
 
     public void hit(int compartiment){
@@ -40,5 +45,12 @@ public enum Schip {
         }
         return true;
 
+    }
+
+    public void setVector(Vector vector) {
+        if(vector == null){
+            throw new DomainException("De vector van een schip kan niet null zijn.");
+        }
+        this.vector = vector;
     }
 }

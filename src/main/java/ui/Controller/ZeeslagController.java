@@ -1,13 +1,14 @@
 package ui.Controller;
 
 import domain.model.Spel;
-import ui.view.View;
+import ui.view.viewComponents.ZeeslagView;
+
 import javax.swing.*;
 
 public class ZeeslagController {
-    private View view;
+    private ZeeslagView view;
     private Spel spel;
-    public ZeeslagController(Spel spel,View view){
+    public ZeeslagController(Spel spel, ZeeslagView view){
         this.spel = spel;
         this.view = view;
         maakSpeler();
