@@ -26,4 +26,12 @@ public class Vector {
     public int getGroote() {
         return groote;
     }
+
+    public void setRichting(boolean richting) {
+        this.horizontaal = richting;
+    }
+
+    public boolean getHorizontaal() {
+        return horizontaal;
+    }
 }

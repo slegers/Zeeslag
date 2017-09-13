@@ -1,8 +1,8 @@
 package domain.model;
 
 
-import ui.Controller.ZeeslagController;
-import ui.view.viewComponents.ZeeslagView;
+import ui.controller.ZeeslagController;
+import ui.view.ZeeslagView;
 
 public class Launcher {
 
@@ -11,5 +11,6 @@ public class Launcher {
        Spel spel = new Spel();
        ZeeslagController controller = new ZeeslagController(spel,view);
        view.start();
+       view.setController(controller);
     }
 }

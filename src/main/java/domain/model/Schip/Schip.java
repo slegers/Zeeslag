@@ -44,7 +44,6 @@ public enum Schip {
             }
         }
         return true;
-
     }
 
     public void setVector(Vector vector) {
@@ -52,5 +51,26 @@ public enum Schip {
             throw new DomainException("De vector van een schip kan niet null zijn.");
         }
         this.vector = vector;
+    }
+
+    /**
+     * Veranderd de richting van het schip naar de gegeven richting.
+     *
+     * @param horizontaal
+     *        True als en alleen als het schip horizontaal gepositioneerd moet worden.
+     *        False als en alleen als het schip verticaal gepositioneerd moet worden.
+     */
+    public void setRichting(boolean horizontaal){
+        vector.setRichting(horizontaal);
+    }
+
+    /**
+     * Geeft de richting terug van het schip.
+     *
+     * @return True als en alleen als het schip horizontaal gepositioneerd is.
+     * @Return False als en alleen als het schip verticaal gepositioneerd is.
+     */
+    public boolean getRichting(){
+        return vector.getHorizontaal();
     }
 }

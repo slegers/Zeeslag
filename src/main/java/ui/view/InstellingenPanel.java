@@ -1,4 +1,4 @@
-package ui.view.viewComponents;
+package ui.view;
 
 import domain.model.Schip.Schip;
 

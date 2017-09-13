@@ -1,4 +1,4 @@
-package ui.view.viewComponents.veld;
+package ui.view.veld;
 
 import javax.imageio.plugins.jpeg.JPEGHuffmanTable;
 import javax.swing.*;
@@ -26,5 +26,13 @@ public class Tile extends JPanel {
     public void setColor(Color c){
         setBackground(c);
         updateUI();
+    }
+    public void setMouseListner(MouseListener m ){
+        addMouseListener(m);
+        setName(id+"");
+    }
+    @Override
+    public String toString(){
+        return this.id +"";
     }
 }

@@ -1,14 +1,15 @@
-package ui.view.viewComponents;
+package ui.view;
 
 
-import ui.view.viewComponents.veld.ComputerVeld;
-import ui.view.viewComponents.veld.SpelersVeld;
-import ui.view.viewComponents.veld.Veld;
+import ui.controller.Listners.PlaatSchipListner;
+import ui.controller.ZeeslagController;
+import ui.view.veld.ComputerVeld;
+import ui.view.veld.SpelersVeld;
+import ui.view.veld.Tile;
+import ui.view.veld.Veld;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseListener;
 
 public class SpelersPanel extends JPanel {
     private Veld veld;
@@ -30,7 +31,6 @@ public class SpelersPanel extends JPanel {
         if(veld == null){
             addNameLabel("");
             veld = new SpelersVeld();
-            veld.setVeld();
         }
         afterCreation();
     }
@@ -42,7 +42,6 @@ public class SpelersPanel extends JPanel {
         if(veld == null){
             addNameLabel("Computer");
             veld = new ComputerVeld();
-            veld.setVeld();
         }
         afterCreation();
     }
@@ -62,5 +61,15 @@ public class SpelersPanel extends JPanel {
     public void setSpelersNaam(String naam) {
         label.setText(naam + ": ");
         this.updateUI();
+    }
+
+    public void setControllerVeld(ZeeslagController controller) {
+       for(Tile t : veld.getTiles().values()){
+           t.setMouseListner(new PlaatSchipListner(controller));
+       }
+    }
+
+    public void hit(int id, Color black) {
+        veld.veranderKleur(id,black);
     }
 }

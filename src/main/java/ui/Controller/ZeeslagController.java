@@ -1,9 +1,10 @@
-package ui.Controller;
+package ui.controller;
 
 import domain.model.Spel;
-import ui.view.viewComponents.ZeeslagView;
+import ui.view.ZeeslagView;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class ZeeslagController {
     private ZeeslagView view;
@@ -15,6 +16,10 @@ public class ZeeslagController {
         this.view.setSpelersNaam(spel.getNaamSpeler());
     }
 
+    private void setControllerView() {
+        view.setController(this);
+    }
+
     public void maakSpeler(){
         try{
             spel.maakSpeler(JOptionPane.showInputDialog(null,"Wat is uw naam?"));
@@ -22,5 +27,13 @@ public class ZeeslagController {
             JOptionPane.showMessageDialog(null,e.getMessage());
             maakSpeler();
         }
+    }
+
+    public void hit(int id, Color black) {
+        view.hit(id,black);
+    }
+
+    public void CreaeteSchip(int id) {
+        //TODO paint the
     }
 }
