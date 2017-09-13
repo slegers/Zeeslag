@@ -1,4 +1,4 @@
-package ui.view;
+package ui.view.viewComponents;
 
 import domain.model.Schip.Schip;
 
@@ -11,11 +11,20 @@ public class InstellingenPanel extends JPanel{
     private CheckboxGroup positie;
     private GridBagLayout layout;
     private GridBagConstraints c;
+    private JButton start;
     public InstellingenPanel() {
         setLayoutInstellingen();
         maakSchepen();
         maakRichting();
+        maakStartButton();
         setVisible(true);
+    }
+
+    private void maakStartButton() {
+        start = new JButton("Start");
+        c.gridx = 0;
+        c.gridy = 5;
+        add(start,c);
     }
 
     private void maakRichting() {

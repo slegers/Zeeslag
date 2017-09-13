@@ -1,11 +1,14 @@
-package ui.view;
+package ui.view.viewComponents;
 
-import ui.view.veld.ComputerVeld;
-import ui.view.veld.SpelersVeld;
-import ui.view.veld.Veld;
+
+import ui.view.viewComponents.veld.ComputerVeld;
+import ui.view.viewComponents.veld.SpelersVeld;
+import ui.view.viewComponents.veld.Veld;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
 
 public class SpelersPanel extends JPanel {
     private Veld veld;

@@ -1,4 +1,4 @@
-package ui.view.veld;
+package ui.view.viewComponents.veld;
 
 public class ComputerVeld extends Veld {
 

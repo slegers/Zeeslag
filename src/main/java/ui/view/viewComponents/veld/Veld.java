@@ -1,6 +1,4 @@
-package ui.view.veld;
-
-import com.sun.tools.corba.se.idl.InterfaceGen;
+package ui.view.viewComponents.veld;
 
 import javax.swing.*;
 import java.awt.*;
@@ -26,6 +24,4 @@ public abstract class Veld extends JPanel{
        }
        setVisible(true);
     }
-
-
 }

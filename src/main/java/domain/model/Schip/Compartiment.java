@@ -4,10 +4,11 @@ import domain.model.DomainException;
 
 public class Compartiment {
     private boolean geraakt;
+    private int id;
 
     public Compartiment(){
+        this.id = id;
         geraakt = false;
-
     }
     public boolean isGeraakt(){
         return geraakt;

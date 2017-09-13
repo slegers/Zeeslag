@@ -1,15 +1,19 @@
-package ui.view;
+package ui.view.viewComponents;
 
-import ui.view.veld.Tile;
+import domain.model.DomainException;
+import ui.view.View;
+import ui.Controller.ZeeslagController;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class ZeeslagView extends JFrame {
+import static com.sun.tools.internal.xjc.reader.Ring.add;
+
+public class ZeeslagView extends JFrame implements View {
 
     private SpelersPanel spelersPanel, computerPanel;
     private InstellingenPanel instellingenPanel;
-
+    private ZeeslagController controller;
     public ZeeslagView() {
         setTitle("Zeeslag");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -38,5 +42,15 @@ public class ZeeslagView extends JFrame {
 
     public void setSpelersNaam(String spelersNaam) {
        spelersPanel.setSpelersNaam(spelersNaam);
+    }
+
+    public void start() {
+        this.setVisible(true);
+    }
+
+    public void setController(ZeeslagController controller) {
+        if(this.controller == null){
+            throw new DomainException("De controller van de zeeslagview kan nie gelijk zijn aan null.");
+        }this.controller = controller;
     }
 }
