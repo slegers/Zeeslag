@@ -3,8 +3,6 @@ package ui.view;
 
 import ui.controller.Listners.PlaatSchipListner;
 import ui.controller.ZeeslagController;
-import ui.view.veld.ComputerVeld;
-import ui.view.veld.SpelersVeld;
 import ui.view.veld.Tile;
 import ui.view.veld.Veld;
 
@@ -30,7 +28,7 @@ public class SpelersPanel extends JPanel {
     public void createSpelersVeld() {
         if(veld == null){
             addNameLabel("");
-            veld = new SpelersVeld();
+            veld = new Veld();
         }
         afterCreation();
     }
@@ -41,7 +39,7 @@ public class SpelersPanel extends JPanel {
     public void createComputerVeld() {
         if(veld == null){
             addNameLabel("Computer");
-            veld = new ComputerVeld();
+            veld = new Veld();
         }
         afterCreation();
     }

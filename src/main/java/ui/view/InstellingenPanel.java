@@ -4,6 +4,7 @@ import domain.model.Schip.Schip;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class InstellingenPanel extends JPanel{
     private JLabel schepen, richting;
@@ -76,6 +77,21 @@ public class InstellingenPanel extends JPanel{
             i++;
         }
         return new JComboBox(schips);
+    }
+
+    public void addSelectActionListner(ActionListener a){
+        select.addActionListener(a);
+    }
+
+    public void getSchipType(){
+
+    }
+
+    public int getSchipGroote(){
+        int beginIndex = select.getSelectedItem().toString().length() - 2;
+        int eindIndex = select.getSelectedItem().toString().length() - 1;
+        String s = select.getSelectedItem().toString().substring(beginIndex,eindIndex);
+        return Integer.parseInt(s);
     }
 
 }

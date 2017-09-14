@@ -11,6 +11,5 @@ public class Launcher {
        Spel spel = new Spel();
        ZeeslagController controller = new ZeeslagController(spel,view);
        view.start();
-       view.setController(controller);
     }
 }

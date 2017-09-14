@@ -1,10 +1,13 @@
 package ui.view.veld;
 import domain.model.DomainException;
+import domain.model.Observer.Observer;
+import domain.model.Observer.Subject;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.TreeMap;
 
-public abstract class Veld extends JPanel{
+public class Veld extends JPanel implements Observer{
 
     private TreeMap<Integer,Tile> veld;
 
@@ -44,4 +47,14 @@ public abstract class Veld extends JPanel{
         System.out.println(id);
           veld.get(id).setColor(c);
     }
+
+    public void update(){
+
+    }
+
+    @Override
+    public void update(Observer o) {
+
+    }
+
 }

@@ -1,6 +1,7 @@
 package ui.view;
 
 import domain.model.DomainException;
+import ui.controller.Listners.SelectSchipListner;
 import ui.controller.ZeeslagController;
 
 import javax.swing.*;
@@ -53,11 +54,12 @@ public class ZeeslagView extends JFrame {
             throw new DomainException("De controller van de zeeslagview kan nie gelijk zijn aan null.");
         }
         this.controller = controller;
-        setControllerPanels(controller);
+        setControllerPanels(this.controller);
     }
 
     public void setControllerPanels(ZeeslagController controller) {
         spelersPanel.setControllerVeld(controller);
+        instellingenPanel.addSelectActionListner(new SelectSchipListner(controller));
     }
 
     public void hit(int id, Color black) {
